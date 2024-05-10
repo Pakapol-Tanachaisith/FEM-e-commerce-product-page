@@ -11,7 +11,7 @@ import { PRODUCT_IMAGES } from "./constant";
 <template>
   <Container>
     <Header />
-    <main class="grid sm:grid-cols-2 pb-8">
+    <main class="grid sm:grid-cols-2 pb-8 sm:gap-20 sm:py-20">
       <ProductGallery :images="PRODUCT_IMAGES" />
       <ProductInfo />
     </main>
