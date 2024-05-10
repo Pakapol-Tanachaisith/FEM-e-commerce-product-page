@@ -4,8 +4,10 @@ import { TabGroup, TabList, Tab, TabPanels, TabPanel } from "@headlessui/vue";
 
 import PreviousIcon from "@/components/icons/PreviousIcon.vue";
 import NextIcon from "@/components/icons/NextIcon.vue";
+import { useLightboxStore } from "@/stores/lightbox";
 
 const props = defineProps(["images"]);
+const lightboxStore = useLightboxStore();
 
 const selectedIndex = ref(0);
 
@@ -56,6 +58,8 @@ function nextTab() {
         <TabPanel
           v-for="(product, index) in images"
           :key="`product-src-${index}`"
+          @click.stop="() => lightboxStore.onOpen(index)"
+          class="cursor-pointer"
         >
           <img
             :src="product.src"

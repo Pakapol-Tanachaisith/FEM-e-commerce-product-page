@@ -3,6 +3,7 @@ import Container from "@/components/Container.vue";
 import Header from "@/components/Header.vue";
 import ProductGallery from "@/components/ProductGallery.vue";
 import ProductInfo from "@/components/ProductInfo.vue";
+import Lightbox from "@/components/Lightbox.vue";
 
 import { PRODUCT_IMAGES } from "./constant";
 </script>
@@ -15,4 +16,5 @@ import { PRODUCT_IMAGES } from "./constant";
       <ProductInfo />
     </main>
   </Container>
+  <Lightbox :images="PRODUCT_IMAGES" />
 </template>

@@ -5,7 +5,7 @@
       stroke="#1D2026"
       stroke-width="3"
       fill="none"
-      fill-rule="evenodd"
+      fill-rule="inherit"
     />
   </svg>
 </template>
