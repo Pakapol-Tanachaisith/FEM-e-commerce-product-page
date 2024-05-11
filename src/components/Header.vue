@@ -4,7 +4,8 @@ import ProfileImg from "@/assets/images/image-avatar.png";
 import CartIcon from "@/components/icons/CartIcon.vue";
 import MenuIcon from "@/components/icons/MenuIcon.vue";
 import Avatar from "@/components/Avatar.vue";
-import MainNav from "./MainNav.vue";
+import MainNav from "@/components/MainNav.vue";
+import CartPopover from "@/components/CartPopover.vue";
 </script>
 
 <template>
@@ -21,9 +22,7 @@ import MainNav from "./MainNav.vue";
       <MainNav />
     </div>
     <div class="flex items-center ml-auto gap-8 sm:gap-12">
-      <button>
-        <CartIcon />
-      </button>
+      <CartPopover />
       <Avatar :src="ProfileImg" alt="user profile" />
     </div>
   </header>

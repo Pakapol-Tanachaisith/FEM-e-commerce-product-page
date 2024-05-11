@@ -1,7 +1,23 @@
 <script setup>
+import { ref } from "vue";
+
+import { useCartStore } from "@/stores/cart";
 import MinusIcon from "@/components/icons/MinusIcon.vue";
 import PlusIcon from "@/components/icons/PlusIcon.vue";
 import CartIcon from "@/components/icons/CartIcon.vue";
+
+const cartStore = useCartStore();
+const quantity = ref(0);
+
+const onIncrease = () => quantity.value++;
+const onDecrease = () => {
+  quantity.value = quantity.value - 1 > 0 ? quantity.value - 1 : 0;
+};
+
+const onAddToCart = () => {
+  cartStore.addItems(quantity.value);
+  quantity.value = 0;
+};
 </script>
 
 <template>
@@ -33,16 +49,19 @@ import CartIcon from "@/components/icons/CartIcon.vue";
       <div
         class="flex justify-between items-center bg-grayish-blue-400 p-4 rounded-lg sm:w-1/3"
       >
-        <button class="hover:opacity-70">
+        <button class="hover:opacity-70" @click="onDecrease">
           <MinusIcon />
         </button>
-        <p class="text-black text-lg font-bold flex-shrink-0">0</p>
-        <button class="hover:opacity-70">
+        <p class="text-black text-lg font-bold flex-shrink-0">
+          {{ quantity }}
+        </p>
+        <button class="hover:opacity-70" @click="onIncrease">
           <PlusIcon />
         </button>
       </div>
 
       <button
+        @click="onAddToCart"
         class="flex justify-center items-center bg-primary-500 shadow-lg shadow-primary-200 text-white p-4 rounded-lg sm:flex-grow hover:opacity-70"
       >
         <CartIcon class="fill-white" />
