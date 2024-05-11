@@ -58,7 +58,7 @@ function nextTab() {
         <TabPanel
           v-for="(product, index) in images"
           :key="`product-src-${index}`"
-          @click.stop="() => lightboxStore.onOpen(index)"
+          @click.stop="() => lightboxStore.onOpen()"
           class="cursor-pointer"
         >
           <img

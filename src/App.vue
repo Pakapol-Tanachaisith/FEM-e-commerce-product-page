@@ -4,6 +4,7 @@ import Header from "@/components/Header.vue";
 import ProductGallery from "@/components/ProductGallery.vue";
 import ProductInfo from "@/components/ProductInfo.vue";
 import Lightbox from "@/components/Lightbox.vue";
+import MobileDrawer from "@/components/MobileDrawer.vue";
 
 import { PRODUCT_IMAGES } from "./constant";
 </script>
@@ -17,4 +18,5 @@ import { PRODUCT_IMAGES } from "./constant";
     </main>
   </Container>
   <Lightbox :images="PRODUCT_IMAGES" />
+  <MobileDrawer />
 </template>
